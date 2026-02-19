@@ -13,7 +13,7 @@ A pair programming navigator that reviews your in-progress work and provides con
 ## Installation
 
 ```bash
-claude install-skill <github-url>/continuous-code-review
+claude install-skill https://github.com/asapach/claude-skills/continuous-code-review
 ```
 
 ## License
