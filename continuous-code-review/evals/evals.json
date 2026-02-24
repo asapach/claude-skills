@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Hey, can you check my progress? I've been working on this feature and want a second pair of eyes.",
-      "expected_output": "Navigator gathers git context, reads changed files, then provides accurate conversational feedback with both strengths and concerns",
+      "expected_output": "Navigator gathers git context, reads changed files, then provides focused conversational feedback without filler or forced praise",
       "files": [],
       "assertions": [
         "Runs git commands to gather branch context (git status, git diff, git log or similar)",
@@ -13,15 +13,15 @@
         "Provides feedback in a conversational tone using paragraphs, not numbered lists, bullet points, or bold-header sections",
         "Makes multiple specific observations about the actual code, covering at least two of: architecture/design, correctness/bugs, edge cases, testing",
         "Technical claims in the response are accurate and verifiable against the actual code (no hallucinated details about files, functions, or behavior)",
-        "Acknowledges something done well and raises at least one substantive concern",
+        "Does not include forced or gratuitous praise — no 'great job', 'nice work', 'well done', 'clean implementation', or similar compliments unless they serve a specific technical point",
         "Does not rewrite or modify any code unless asked",
-        "Response is concise — a few short paragraphs, not a wall of text"
+        "Response is tightly scoped — no more than 3 short paragraphs of feedback text (excluding the initial context-gathering phase), roughly 150-250 words of actual feedback"
       ]
     },
     {
       "id": 2,
       "prompt": "What do you think? Am I on the right track?",
-      "expected_output": "Navigator assesses the current direction, validates the approach, and raises concerns conversationally",
+      "expected_output": "Navigator assesses the current direction and raises concerns conversationally, without padding with compliments",
       "files": [],
       "assertions": [
         "Gathers context before responding (does not jump straight to opinions)",
@@ -30,13 +30,15 @@
         "Challenges at least two assumptions or raises multiple potential concerns with reasoning",
         "Response feels like a conversation, not a code review checklist — uses paragraphs and natural transitions between topics",
         "Technical claims are accurate and verifiable against the actual code",
-        "Suggestions are actionable — concrete enough for the user to act on without guessing what was meant"
+        "Suggestions are actionable — concrete enough for the user to act on without guessing what was meant",
+        "Does not pad the response with praise or positive affirmations — gets straight to substantive observations",
+        "Response is concise — no more than 3 short paragraphs of feedback, roughly 150-250 words"
       ]
     },
     {
       "id": 3,
       "prompt": "/continuous-code-review",
-      "expected_output": "Navigator performs full peer review workflow: gather context, understand changes, provide accurate conversational feedback calibrated to the stage of work",
+      "expected_output": "Navigator performs full peer review workflow: gather context, understand changes, provide tight conversational feedback without filler",
       "files": [],
       "assertions": [
         "Follows the full skill workflow: gathers git context, reads changed files, then provides feedback (not just triggering)",
@@ -46,7 +48,8 @@
         "Prioritizes substantive feedback (bugs, design, edge cases, testing gaps) over style nits — no formatting or naming suggestions unless egregious",
         "Maintains conversational tone throughout — paragraphs, not lists or headers",
         "Technical observations are accurate and verifiable against the actual code",
-        "Response is appropriately scoped — a few short paragraphs (~60 seconds of conversation), with an offer to go deeper if the user wants"
+        "Does not include obligatory praise or compliments — every sentence should carry substantive information",
+        "Response is tightly scoped — no more than 3 short paragraphs of feedback (~150-250 words), with an offer to go deeper if the user wants"
       ]
     }
   ]
