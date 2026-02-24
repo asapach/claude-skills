@@ -7,7 +7,7 @@
     {
       "name": "continuous-code-review",
       "description": "A pair programming navigator that reviews your in-progress work and provides conversational guidance.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "source": "./",
       "strict": false,
       "skills": [
