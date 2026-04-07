@@ -1,5 +1,5 @@
 {
-  "skill_name": "pair-review",
+  "skill_name": "pair-code-review",
   "evals": [
     {
       "id": 1,
@@ -37,7 +37,7 @@
     },
     {
       "id": 3,
-      "prompt": "/pair-review",
+      "prompt": "/pair-code-review",
       "expected_output": "Navigator performs full peer review workflow: gather context, understand changes, provide tight conversational feedback without filler",
       "files": [],
       "assertions": [

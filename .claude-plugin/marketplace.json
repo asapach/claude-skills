@@ -5,13 +5,13 @@
   },
   "plugins": [
     {
-      "name": "pair-review",
+      "name": "pair-code-review",
       "description": "A pair programming navigator that reviews your in-progress work and provides conversational guidance.",
       "version": "2.0.0",
       "source": "./",
       "strict": false,
       "skills": [
-        "./pair-review"
+        "./pair-code-review"
       ]
     }
   ]
